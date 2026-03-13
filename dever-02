@@ -46,5 +46,14 @@ n = 500   → tempo = 0.000150 segundos
 n = 1000  → tempo = 0.000310 segundos
 
 
+3) O tempo cresce de forma linear com n
+Para cada incremento de 500 unidades em, o tempo praticamente dobra
+com n tomando outros valores, o tempo seria 
+
+n = 60   → tempo = 0.000020 segundos
+n = 120  → tempo = 0.000045 segundos
+n = 180  → tempo = 0.000070 segundos
+n = 240  → tempo = 0.000095 segundos
+
 
 

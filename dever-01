@@ -1,0 +1,50 @@
+import random
+import time
+
+# Implementação do Insertion Sort (O(n^2))
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        chave = arr[i]
+        j = i - 1
+        
+        while j >= 0 and arr[j] > chave:
+            arr[j + 1] = arr[j]
+            j -= 1
+        
+        arr[j + 1] = chave
+    
+    return arr
+
+
+# Função para gerar lista aleatória
+def gerar_lista(n):
+    return [random.randint(0, 100000) for _ in range(n)]
+
+
+# Tamanhos de entrada
+tamanhos = [1000, 5000, 10000, 20000, 50000]
+
+for n in tamanhos:
+    print(f"\nTamanho da lista: {n}")
+    
+    lista = gerar_lista(n)
+    
+    # Cópias da lista para garantir mesma entrada
+    lista_insertion = lista.copy()
+    lista_sorted = lista.copy()
+    
+    # Medindo tempo do Insertion Sort
+    inicio = time.time()
+    insertion_sort(lista_insertion)
+    fim = time.time()
+    tempo_insertion = fim - inicio
+    
+    print(f"Insertion Sort: {tempo_insertion:.6f} segundos")
+    
+    # Medindo tempo do sorted() (Timsort)
+    inicio = time.time()
+    sorted(lista_sorted)
+    fim = time.time()
+    tempo_sorted = fim - inicio
+    
+    print(f"sorted() (Timsort): {tempo_sorted:.6f} segundos")
